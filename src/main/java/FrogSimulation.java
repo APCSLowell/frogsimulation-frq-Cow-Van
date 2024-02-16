@@ -16,13 +16,26 @@ public class FrogSimulation
 	public boolean simulate()
 	{ 
 		/* to be implemented in part (a) */
-
+		int a = 0;
+        for (int i = 0; i < maxHops; i++) {
+          a += hopDistance();
+          if (a >= goalDistance) {
+            return true;
+          }
+        }
+    
+        return false;
 	}
 	
 	public double runSimulations(int num)
 	{ 
 		/* to be implemented in part (b) */ 
-
+        int a = 0;
+        for (int i = 0; i < num; i++) {
+          a += simulate() ? 1 : 0;
+        }
+    
+        return (double) a / num;
 	}
 	
 	
@@ -95,3 +108,16 @@ public class FrogSimulation
 	
 	
 } 
+/*
+  .--.            .--.
+ ( (`\\."--``--".//`) )
+  '-.   __   __    .-'
+   /   /__\ /__\   \
+  |    \ 0/ \ 0/    |
+  \     `/   \`     /
+   `-.  /-"""-\  .-`
+     /  '.___.'  \
+     \     I     /
+      `;--'`'--;`
+jgs     '.___.'
+*/
